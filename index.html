@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Task Site — Puzzle Flow</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <section id="page-welcome">
+      <h1>Congratulations on finding the site!</h1>
+      <p class="small-muted">Click the button below to continue to the next task.</p>
+      <div class="center" style="margin-top:18px">
+        <button id="start-btn">Continue to first task</button>
+      </div>
+    </section>
+
+    <section id="page-sudoku" class="hidden">
+      <h1>Task 1 — Sudoku</h1>
+      <p class="small-muted">Fill the board correctly and press "Check".</p>
+      <div class="center">
+        <table class="sudoku" id="sudoku-table"></table>
+      </div>
+      <div class="center" style="gap:8px;flex-direction:column">
+        <div class="controls">
+          <button id="check-sudoku">Check</button>
+          <button id="reset-sudoku" class="ghost">Reset</button>
+        </div>
+        <div class="status" id="sudoku-status"></div>
+      </div>
+    </section>
+
+    <section id="page-cards" class="hidden">
+      <h1>Task 2 — Deck Probability</h1>
+      <p class="small-muted">Answer all 5 questions. You may ask peers for help :) — decimal or fraction accepted (e.g. 1/13 or 0.0769).</p>
+      <div class="quiz" id="quiz-area"></div>
+      <div class="controls">
+        <button id="check-quiz">Submit Answers</button>
+        <button id="reset-quiz" class="ghost">Reset</button>
+      </div>
+      <div class="status" id="quiz-status"></div>
+    </section>
+
+    <section id="page-bomb" class="hidden">
+      <h1>Final Task!</h1>
+      <p class="small-muted">Cut the correct wire before the timer reaches 0.</p>
+      <div class="bomb-stage">
+        <div class="bomb" id="bomb-box">
+          <div class="timer" id="bomb-timer">01:00</div>
+          <div id="explosion" class="explosion" aria-hidden="true"></div>
+        </div>
+        <div class="wires" id="wires">
+          <div class="wire red" data-wire="red">Red Wire</div>
+          <div class="wire green" data-wire="green">Green Wire</div>
+          <div class="wire blue" data-wire="blue">Blue Wire</div>
+          <div class="wire yellow" data-wire="yellow">Yellow Wire</div>
+        </div>
+        <div class="inline-note">All wires are correct — cut any one before time runs out. If you don't cut one in time, explosion occurs and the challenge restarts.</div>
+      </div>
+    </section>
+
+    <section id="page-success" class="hidden">
+      <div class="final">
+        <h1>Congratulations on completing your tasks!</h1>
+        <p class="small-muted">When you go to judge the cupcakes, tell Mr. Carraro the password.</p>
+        <p style="margin-top:12px;font-size:20px;font-weight:800">Password: <span style="color:var(--accent)">Dijon</span></p>
+        <div style="margin-top:14px" class="controls">
+          <button id="restart-all" class="ghost">Play again</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>Made with 🔧 — save this file and host it to create a QR code pointing to its URL.</footer>
+  </div>
+<script src="script.js" defer></script>
+</body>
+</html>
